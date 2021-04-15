@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:white ;
+    font-size: 2rem;
+}
+
+.container{
+    background-color: rgb(27, 26, 26);
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.draggable{
+    padding: 5px;
+    margin:5px;
+    background-color: rgb(255, 252, 222);
+    cursor: move;
+
+
+}
+
+
+
+// body {
+//   margin: 0;
+// }
+
+// .container {
+//   background-color: #333;
+//   padding: 1rem;
+//   margin-top: 1rem;
+// }
+
+// .draggable {
+//   padding: 1rem;
+//   background-color: white;
+//   border: 1px solid black;
+//   cursor: move;
+// }
+
+.draggable.dragging {
+  opacity: .5;
+}

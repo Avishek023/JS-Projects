@@ -1,0 +1,172 @@
+.menu-wrap{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1;
+}
+
+.menu-wrap .toggler{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.menu-wrap .hamburger{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 60px;
+    width: 60px;
+    padding: 1rem;
+    z-index: 1;
+    background-color: var(--primary-color);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hamburger */
+
+/*middleline*/
+
+.menu-wrap .hamburger >div{
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color:white;
+    display: flex;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+
+}
+
+/* other lines */
+
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
+
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top:-10px;
+    width: 100%;
+    height: 2px;
+    background:inherit;
+
+}
+/*
+
+THIS IS FROM THE CODEPEN WEBSITE. THERE SHOULD BE NO SPACE IN BETWEEN div AND ::before
+
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}*/
+
+/* pushing the line down */
+
+.menu-wrap .hamburger > div::after {
+    top:10px;
+}
+
+/*styling the checked state of the menu*/
+
+.toggler:checked +.hamburger>div{
+    transform: rotate(135deg);
+}
+
+.toggler:checked +.hamburger>div::before,
+.toggler:checked +.hamburger>div::after{
+    top:0;
+    transform:rotate(90deg);
+}
+
+.toggler:checked:hover +.hamburger>div{
+    transform: rotate(225deg);
+}
+
+
+/* styling the menu animation */
+
+.menu-wrap .menu{
+    position: fixed;
+    top: 0;
+    left:0;
+    height:100%;
+    width:100%;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-wrap .menu>div{
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    width:200vw;
+    height:200vw;
+    display: flex;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    transform:scale(0);
+    transition: all 0.4s ease;
+}
+
+.menu-wrap .menu >div >div{
+    text-align: center;
+    opacity: 0;
+    max-height: 100vh;
+    max-width: 90vw;
+    transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu>div >div ul li{
+    list-style:none;
+    padding: 1rem;
+    font-size:1.5rem;
+}
+
+.menu-wrap .menu >div >div ul li a{
+    color:white;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.menu-wrap .menu >div >div ul li a:hover{
+    font-size:1.7rem;
+}
+
+/* animation so that the menu opens on click */
+
+.menu-wrap .toggler:checked ~ .menu{
+    visibility:visible;
+    
+}
+
+
+.menu-wrap .toggler:checked ~ .menu>div{
+    transform: scale(1);
+    transition-duration: var(--primary-speed);
+}
+
+.menu-wrap .toggler:checked ~ .menu >div >div{
+    opacity:1;
+    transition: opacity 0.4s ease;
+}
+
+
+
