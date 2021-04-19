@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import 'menu.scss';
+@import 'section.scss';
+@import 'container.scss';
+@import 'social-icons.scss';
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: linear-gradient(#2b1055 , #7597de);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+footer{
+    background-color: #1c0522;
+    padding: 15px 100px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}

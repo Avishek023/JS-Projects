@@ -1,0 +1,20 @@
+.social-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px 0px;
+    background-color: #1c0522;
+    a{
+        text-align: center;
+        text-decoration: none;
+        padding: 20px;
+        color: white;
+        border-radius: 40px;
+        &:hover{
+            color: black;
+            background-color: white;
+
+        }
+
+    }
+}
