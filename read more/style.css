@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #e2f76c;
+    color:#257cff ;
+    font-family: monaco;
+}
+.container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card{
+    position: relative;
+    padding:2rem;
+    margin: 2rem;
+    width: 300px;
+    background-color: #beff25;
+}
+
+.card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 20px solid transparent;
+    border-top: 20px solid #ff2551;
+    border-right: 20px solid #ff2551;
+    
+}
+
+.content{
+    position: relative;
+    height: 215px;
+    overflow: hidden;
+}
+
+.content h2{
+    padding-top: 5px;
+    font-weight: 600;
+    margin-bottom: 10px;
+
+}
+
+.content p{
+    font-weight: 300;
+    color: #3182fc;
+}
+.icon{
+    padding: 0 15px;
+}
+
+.content::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background:linear-gradient(transparent,#beff25);
+}
+
+.container .card .more{
+    position: relative;
+    padding: 10px 15px;
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #ff2551;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color:rgb(3, 26, 41);
+}
+.more::before{
+    content: 'READ MORE';
+}
+.card.active .more::before{
+    content: 'READ LESS';
+}
+.card.active .more{
+    background-color: #257cff;
+    color: white;
+}
+.card.active::before{
+    border: 20px solid transparent;
+    border-top: 20px solid #257cff;
+    border-right: 20px solid #257cff;
+}
+
+.card.active .content{
+    height:auto;
+
+}
+
+.container .card.active .content::before{
+    display:none;
+}

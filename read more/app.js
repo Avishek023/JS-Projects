@@ -1,0 +1,15 @@
+let more = document.querySelectorAll('.more')
+
+more.forEach(element => {
+    element.addEventListener('click',()=>{
+        element.parentNode.classList.toggle('active')
+    })
+    
+});
+
+/*for(let i = 0 ; i<more.length ; i++){
+    more[i].addEventListener('click',()=>{
+        more[i].parentNode.classList.toggle('active')
+    })
+}*/
+
